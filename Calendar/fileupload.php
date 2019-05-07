@@ -15,7 +15,8 @@
         <form action="upload.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="filename" placeholder="Fil navn..." required>
             <input type="text" name="filetitle" placeholder="Billede titel..." required>
-            <input type="text" name="filedesc" placeholder="Billede beskrivelse" required>
+            <input type="text" name="filedesc" placeholder="Billede beskrivelse..." required>
+            <input type="text" name="filelink" placeholder="Link til hjemmeside..." required>
             <input type="file" name="file" required>
             <select name="doorid" required>
                 <?php

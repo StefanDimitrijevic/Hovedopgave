@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
 
     $imageTitle = $_POST['filetitle'];
     $imageDesc = $_POST['filedesc'];
+    $siteLink = $_POST['filelink'];
     $doorid = $_POST['doorid'];
 
     $file = $_FILES['file'];
@@ -57,11 +58,11 @@ if (isset($_POST['submit'])) {
                     exit();
                 } else {
                     // Inserting data from the image into the database
-                    $sql = "INSERT INTO content (titleContent, descContent, imgNameContent, calendarUsers_id, calendarDoors_idCalendarDoors) VALUES (?, ?, ?, ?, ?);";
+                    $sql = "INSERT INTO content (titleContent, descContent, linkContent, imgNameContent, calendarUsers_id, calendarDoors_idCalendarDoors) VALUES (?, ?, ?, ?, ?, ?);";
                     if (!$stmt = $link->prepare($sql)) {
                         echo "SQL statement failed!";
                     } else {
-                        $stmt->bind_param("sssii", $imageTitle, $imageDesc, $imageFullName, $userid, $doorid);
+                        $stmt->bind_param("ssssii", $imageTitle, $imageDesc, $siteLink, $imageFullName, $userid, $doorid);
                         $stmt->execute();
 
                         // Uploading image to server

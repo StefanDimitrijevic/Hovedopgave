@@ -46,19 +46,23 @@
 
         <?php 
         include_once "dbcon.php";
-        $sql = "SELECT titleContent, descContent, imgNameContent FROM content WHERE calendarDoors_idCalendarDoors=2 ORDER BY idContent DESC";
+        $sql = "SELECT titleContent, descContent, linkContent, imgNameContent FROM content WHERE calendarDoors_idCalendarDoors=1 ORDER BY idContent DESC";
         $stmt = $link->prepare($sql);
-        $stmt->bind_result($title, $desc, $fullName);
+        $stmt->bind_result($title, $desc, $siteLink, $fullName);
         $stmt->execute();
         while($stmt->fetch()) { ?>
+        
         <div class="popup">
             <div class="hm">
                 <p class="exit">x</p>
                 <h1><?=$title?></h1>
-                <a href="http://<?=$desc?>" target="_blank">Tryk for at gå til produktet</a>
+                <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
                 <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
             </div>
-        </div> <?php } ?> 
+        </div> 
+        
+        <?php } ?> 
+        
         <?php
             if(isset($_SESSION['users_id'])){
         ?>
