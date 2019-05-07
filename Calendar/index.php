@@ -56,13 +56,14 @@
             <div class="hm">
                 <p class="exit">x</p>
                 <h1><?=$title?></h1>
-                <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
+                <h3><?=$desc?></h3>
                 <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
+                <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
             </div>
         </div> 
         
         <?php } ?> 
-        
+
         <?php
             if(isset($_SESSION['users_id'])){
         ?>
