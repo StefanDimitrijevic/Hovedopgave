@@ -9,7 +9,7 @@ html, body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-image: url("/Calendar/images/christmas-background.jpg");
+  background-image: url("/Hovedopgave/Calendar/images/christmas-background.jpg");
   background-repeat: no-repeat no-repeat;
   background-position: center center;
   background-size: cover;
