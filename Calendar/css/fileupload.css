@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-image: url("/Calendar/images/christmas-background.jpg");
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container .sign-up {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 40%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .sign-up .form-content {
+  width: 80%;
+}
+
+.container .sign-up .form-content .inputs {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 25px;
+}
+
+.container .sign-up .btn {
+  padding: 10px;
+  background-color: #C11A22;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.container .sign-up .btn:hover {
+  background-color: #ac1017;
+}
+/*# sourceMappingURL=fileupload.css.map */
