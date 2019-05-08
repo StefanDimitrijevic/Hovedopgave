@@ -165,6 +165,27 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.btn {
+  padding: 10px;
+  background-color: #C11A22;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ac1017;
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+
 .form-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

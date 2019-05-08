@@ -55,11 +55,11 @@
         <div class="popup" id="first-popup">
             <div class="hm">
                 <p class="exit">x</p>
+                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
-                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
-               <button>
-                    <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
+               <button class="btn">
+                    <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
                </button>
             </div>
         </div> 
@@ -81,7 +81,7 @@
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
                 <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
-               <button>
+               <button class="btn">
                     <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
                </button>
             </div>
@@ -104,7 +104,7 @@
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
                 <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
-               <button>
+               <button class="btn">
                     <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
                </button>
             </div>
@@ -127,7 +127,7 @@
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
                 <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
-               <button>
+               <button class="btn">
                     <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
                </button>
             </div>
