@@ -33,7 +33,10 @@ html, body {
     }
       
     .door {
-        background-color: green;
+        background-image: url("/Hovedopgave/Calendar/images/doors-background.jpg");
+        background-repeat: no-repeat no-repeat;
+        background-position: center center;
+        background-size: cover;
         position:absolute;
         top:0px;
         left:0px;
@@ -50,7 +53,7 @@ html, body {
         margin: 0;
         padding: 0;
         color: white;
-        font-size: 40px;
+        font-size: 44px;
         font-family: sans-serif;
         position: absolute;
         top: 50%;
@@ -70,10 +73,11 @@ html, body {
       
     
 }
-        .open {
-            transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
-            border-right: 2px dotted white;
-        }
+
+.open {
+    transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
+    border-right: 2px dotted white;
+}
 
 .popup {
     display: none;
@@ -134,7 +138,10 @@ html, body {
     flex-wrap: wrap;
     align-self: center;
     justify-content: space-between;
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 50%;
 
     .hihi {
@@ -143,6 +150,7 @@ html, body {
         width: 400px;
         height: 100%;
         background-color: white;
+        margin-bottom: 30px;
     }
 
     .sign-up {
@@ -167,7 +175,14 @@ html, body {
             color: white;
             border: none;
             font-size: 16px;
+            font-family: sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
             cursor: pointer;
+
+            &:hover {
+                background-color: rgb(172, 16, 23);
+            }
         }
     }
 }
