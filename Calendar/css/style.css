@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -39,7 +40,9 @@ html, body {
           transition-timing-function: ease-out;
 }
 
-.container .wrap:hover, .container .wrap:focus, .container .wrap:active {
+.container .wrap:hover,
+.container .wrap:focus,
+.container .wrap:active {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
 }
