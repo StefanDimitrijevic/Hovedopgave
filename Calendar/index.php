@@ -12,19 +12,22 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.php">Home</a>
-                </li>
-                <li>
-                    <a href="fileupload.php">Upload</a>
-                </li>
-                <li>
-                    <a href="logout.php">Log out</a>
-                </li>
-            </ul>
-        </nav>
+        <?php
+            if(isset($_SESSION['users_id'])) { ?>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="fileupload.php">Upload</a>
+                        </li>
+                        <li>
+                            <a href="logout.php">Log out</a>
+                        </li>
+                    </ul>
+                </nav>
+            <?php } ?>
         <div class="intro">
             <h1 class="header">2019 advents calendar</h1>
             <h3 class="description">Come back each sunday in december to receive a gift!</h3>
@@ -153,12 +156,6 @@
         </div> 
         
         <?php } ?>
-
-        <?php
-            if(isset($_SESSION['users_id'])){
-        ?>
-            <a href="logout.php"> Logged in as <?=$_SESSION['uname']?></a>
-            <?php } else {} ?>
     </div>
 
     <script src="js/doors.js"></script>
