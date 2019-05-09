@@ -58,7 +58,7 @@ body {
     .wrap-flex {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 200px;
+        margin-top: 100px;
 
         .wrap {
             position: relative;
@@ -173,7 +173,7 @@ body {
             justify-content: center;
             .popup-image {
                 max-width: 70%;
-                height: 300px;
+                height: 200px;
             }
         }
     }
