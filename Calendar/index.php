@@ -12,22 +12,11 @@
 </head>
 <body>
     <div class="container">
+
         <?php
-            if(isset($_SESSION['users_id'])) { ?>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="fileupload.php">Upload</a>
-                        </li>
-                        <li>
-                            <a href="logout.php">Log out</a>
-                        </li>
-                    </ul>
-                </nav>
-            <?php } ?>
+            include_once('nav.php');
+        ?>
+
         <div class="intro">
             <h1 class="header">2019 advents calendar</h1>
             <h3 class="description">Come back each sunday in december to receive a gift!</h3>
@@ -77,12 +66,14 @@
         <div class="popup" id="first-popup">
             <div class="popup-content">
                 <p class="exit">x</p>
+                <div class="image-holder">
                     <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
-                    <h1><?=$title?></h1>
-                    <h3><?=$desc?></h3>
-                    <button class="btn">
-                        <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
-                    </button>
+                </div>
+                <h1><?=$title?></h1>
+                <h3><?=$desc?></h3>
+                <button class="btn">
+                    <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
+                </button>
             </div>
         </div> 
         
@@ -100,7 +91,9 @@
         <div class="popup" id="second-popup">
             <div class="popup-content">
                 <p class="exit">x</p>
-                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
+                <div class="image-holder">
+                    <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
+                </div>
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
                <button class="btn">
@@ -123,7 +116,9 @@
         <div class="popup" id="third-popup">
             <div class="popup-content">
                 <p class="exit">x</p>
-                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
+                <div class="image-holder">
+                    <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
+                </div>
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
                <button class="btn">
@@ -146,7 +141,9 @@
         <div class="popup" id="fourth-popup">
             <div class="popup-content">
                 <p class="exit">x</p>
-                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
+                <div class="image-holder">
+                    <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
+                </div>
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
                <button class="btn">

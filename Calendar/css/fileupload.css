@@ -12,6 +12,36 @@ html, body {
   height: 100vh;
 }
 
+.container nav {
+  margin: 0px;
+  padding: 0;
+}
+
+.container nav ul {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container nav ul li {
+  margin: 20px 20px 0 0;
+  list-style: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.container nav ul li a {
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+}
+
 .container .sign-up {
   padding-top: 50px;
   padding-bottom: 50px;

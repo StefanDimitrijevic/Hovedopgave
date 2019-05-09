@@ -13,6 +13,9 @@
 <body>
     <div class="container">
         <?php
+            include_once('nav.php');
+        ?>
+        <?php
         if (isset($_SESSION['users_id'])) { ?>
             <form class="sign-up" action="upload.php" method="POST" enctype="multipart/form-data">
                 <div class="form-content">
