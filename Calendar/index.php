@@ -12,6 +12,24 @@
 </head>
 <body>
     <div class="container">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.php">Home</a>
+                </li>
+                <li>
+                    <a href="fileupload.php">Upload</a>
+                </li>
+                <li>
+                    <a href="logout.php">Log out</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="intro">
+            <h1 class="header">2019 advents calendar</h1>
+            <h3 class="description">Come back each sunday in december to receive a gift!</h3>
+        </div>
+    <div class="wrap-flex">
         <div class="wrap">
             <div class="door">
                 <p class="number-text">1</p>
@@ -43,6 +61,7 @@
             <div class="inside" id="inside-four">
             </div>
         </div>
+    </div>
 
         <?php 
         include_once "dbcon.php";
@@ -53,14 +72,14 @@
         while($stmt->fetch()) { ?>
         
         <div class="popup" id="first-popup">
-            <div class="hm">
+            <div class="popup-content">
                 <p class="exit">x</p>
-                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
-                <h1><?=$title?></h1>
-                <h3><?=$desc?></h3>
-               <button class="btn">
-                    <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
-               </button>
+                    <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
+                    <h1><?=$title?></h1>
+                    <h3><?=$desc?></h3>
+                    <button class="btn">
+                        <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
+                    </button>
             </div>
         </div> 
         
@@ -76,13 +95,13 @@
         while($stmt->fetch()) { ?>
         
         <div class="popup" id="second-popup">
-            <div class="hm">
+            <div class="popup-content">
                 <p class="exit">x</p>
+                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
-                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                <button class="btn">
-                    <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
+                    <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
                </button>
             </div>
         </div> 
@@ -99,11 +118,11 @@
         while($stmt->fetch()) { ?>
         
         <div class="popup" id="third-popup">
-            <div class="hm">
+            <div class="popup-content">
                 <p class="exit">x</p>
+                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
-                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                <button class="btn">
                     <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
                </button>
@@ -122,11 +141,11 @@
         while($stmt->fetch()) { ?>
         
         <div class="popup" id="fourth-popup">
-            <div class="hm">
+            <div class="popup-content">
                 <p class="exit">x</p>
+                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                 <h1><?=$title?></h1>
                 <h3><?=$desc?></h3>
-                <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                <button class="btn">
                     <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
                </button>
