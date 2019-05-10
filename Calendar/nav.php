@@ -15,13 +15,13 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="index.php">Forside</a>
                 </li>
                 <li>
                     <a href="fileupload.php">Upload</a>
                 </li>
                 <li>
-                    <a href="logout.php">Log out</a>
+                    <a href="logout.php">Log ud</a>
                 </li>
             </ul>
         </nav>

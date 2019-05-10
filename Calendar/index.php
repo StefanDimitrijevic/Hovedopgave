@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kalender</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/snowstorm-min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -18,8 +19,8 @@
         ?>
 
         <div class="intro">
-            <h1 class="header">2019 advents calendar</h1>
-            <h3 class="description">Come back each sunday in december to receive a gift!</h3>
+            <h1 class="header">2019 adventskalender</h1>
+            <h3 class="description">Kom tilbage hver advents søndag for at modtage en ny gave!</h3>
         </div>
     <div class="wrap-flex">
         <div class="wrap">
@@ -156,6 +157,7 @@
     </div>
 
     <script src="js/doors.js"></script>
+    <script src="js/customSnow.js"></script>
 
 </body>
 </html>

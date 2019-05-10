@@ -4,11 +4,14 @@ body {
     padding: 0;
 }
 
-.container {
+body {
     background-image: url("/Hovedopgave/Calendar/images/christmas-background.jpg");
     background-repeat: no-repeat no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+.container {
     width: 100vw;
     height: 100vh;
 
@@ -42,9 +45,10 @@ body {
         font-weight: bold;
         text-align: center;
         letter-spacing: 2px;
+        margin-top: 20px;
 
         .header {
-            margin-top: 50px;
+            margin: 50px;
             padding: 0;
             color: white;
             font-size: 40px;
@@ -67,7 +71,6 @@ body {
             margin: 0 auto;
             margin-top: 50px;
             border: 2px dotted white;
-            border-radius: 10%;
             transform: perspective(1px) translateZ(0);
             box-shadow: 0 0 1px rgba(0, 0, 0, 0);
             transition-duration: 0.3s;
@@ -95,7 +98,6 @@ body {
             z-index: 999;
             transform-origin: left;
             transition: all 0.5s ease-in-out;
-            border-radius: 10%;
         }
     
         .number-text {
@@ -117,7 +119,6 @@ body {
             width: 200px;
             height: 200px;
             cursor: pointer;
-            border-radius: 10%;
         }
     }
 }
@@ -139,10 +140,8 @@ body {
 
     .popup-content {
         width: 40%;
-        height: 50%;
         padding: 40px;
         background-color: white;
-        border-radius: 15px;
         animation: scaleUpModal 400ms ease-out forwards;
 
         @keyframes scaleUpModal {
@@ -172,8 +171,9 @@ body {
             display: flex;
             justify-content: center;
             .popup-image {
-                max-width: 70%;
-                height: 200px;
+                max-width: 100%;
+                height: 300px;
+                object-fit: cover;
             }
         }
     }
@@ -211,7 +211,6 @@ body {
 .form-wrapper {
     display: flex;
     flex-wrap: wrap;
-    align-self: center;
     justify-content: space-between;
     position: absolute;
     top: 50%;
