@@ -1,3 +1,5 @@
+@import "variables";
+
 html,
 body {
     margin: 0;
@@ -5,18 +7,137 @@ body {
 }
 
 body {
-    background-image: url("/Hovedopgave/Calendar/images/christmas-background.jpg");
+    background-image: url("/Hovedopgave/Calendar/images/christmas-background.png");
     background-repeat: no-repeat no-repeat;
     background-position: center center;
     background-size: cover;
 }
 
 .container {
-    width: 100vw;
     height: 100vh;
 
+    .upload {
+        margin: 20px 20px;
+        padding: 0;
+        font-family: $robo-regular;
+        font-weight: 400;
+        color: $sec-color;
+        cursor: pointer;
+    }
+
+    .offset {
+        width: 0%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: $sec-color;
+        z-index: 9999;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition: .5s;
+        box-shadow: -1px 0 50px -20px black;
+
+        .close {
+            padding: 0;
+            margin: 0;
+            color: $prim-color;
+            font-family: $monts-bold;
+            font-weight: 700;
+            position: absolute;
+            top: 1%;
+            right: 2%;
+            cursor: pointer;
+        }
+
+        .form {
+            margin: 35px auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 90%;
+            background-color: $prim-color;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 13px -5px rgb(0, 0, 0);
+    
+            .form-content {
+                width: 80%;
+    
+                .labels {
+                    font-family: $robo-regular;
+                    color: $sec-color;
+                }
+    
+                .inputs {
+                    width: 100%;
+                    height: 30px;
+                    margin-bottom: 25px;
+                    margin-top: 10px;
+                    padding: 0px 10px;
+                    border: 1px solid $prim-color;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                }
+    
+                .inputs-file {
+                    width: 100%;
+                    height: 35px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    color: $sec-color;
+                    font-family: $robo-regular;
+                }
+    
+                textarea {
+                    width: 100%;
+                    height: 100px;
+                    margin-bottom: 25px;
+                    margin-top: 10px;
+                    padding: 10px 10px 0px;
+                    border: 1px solid $prim-color;
+                    resize: none;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                }
+    
+                select {
+                    width: 100%;
+                    height: 35px;
+                    margin-bottom: 25px;
+                    margin-top: 10px;
+                    padding: 0px 10px;
+                    border: 1px solid $prim-color;
+                }
+            }
+    
+            .btn {
+                padding: 10px;
+                width: 100%;
+                background-color: $third-color;
+                color: $sec-color;
+                border: none;
+                font-size: 16px;
+                font-family: sans-serif;
+                font-weight: bold;
+                letter-spacing: 2px;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: rgb(46, 139, 69);
+                }
+            }
+    
+        }
+    }
+
+    .offset-visible {
+        width: 40%;
+    }
+
     nav {
-        margin: 0px;
+        margin-bottom: 20px;
         padding: 0;
 
         ul {
@@ -34,43 +155,49 @@ body {
 
                 a {
                     text-decoration: none;
-                    color: white;
+                    color: $sec-color;
                     margin: 20px;
+
+                    &:hover {
+                        border-bottom: 2px solid $sec-color;
+                    }
                 }
             }
         }
     }
     .intro {
-        font-family: sans-serif;
-        font-weight: bold;
         text-align: center;
         letter-spacing: 2px;
-        margin-top: 20px;
 
         .header {
-            margin: 50px;
+            font-family: $monts-bold;
+            font-weight: 700;
+            margin: 0px 0px 10px;
             padding: 0;
-            color: white;
+            color: $sec-color;
             font-size: 40px;
         }
 
         .description {
-            color: white;
+            font-family: $robo-regular;
+            font-weight: 400;
+            color: $sec-color;
         }
     }
 
     .wrap-flex {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 100px;
+        justify-content: space-around;
+        margin: 50px auto 0;
+        width: 80%;
 
         .wrap {
             position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
+            width: 170px;
+            height: 170px;
             margin-top: 50px;
-            border: 2px dotted white;
+            border: 4px dotted $sec-color;
             transform: perspective(1px) translateZ(0);
             box-shadow: 0 0 1px rgba(0, 0, 0, 0);
             transition-duration: 0.3s;
@@ -85,27 +212,28 @@ body {
         }
     
         .door {
-            background-image: url("/Hovedopgave/Calendar/images/doors-background.jpg");
-            background-repeat: no-repeat no-repeat;
-            background-position: center center;
-            background-size: cover;
+            background: repeating-linear-gradient(
+                45deg, $prim-color, $prim-color 10px, $third-color 10px, $third-color 20px
+            );
             position: absolute;
             top: 0px;
             left: 0px;
-            width: 200px;
-            height: 200px;
+            width: 170px;
+            height: 170px;
             cursor: pointer;
             z-index: 999;
             transform-origin: left;
             transition: all 0.5s ease-in-out;
         }
+
+        
     
         .number-text {
             margin: 0;
             padding: 0;
-            color: white;
-            font-size: 44px;
-            font-family: sans-serif;
+            color: $sec-color;
+            font-size: 60px;
+            font-family: $monts-bold;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -113,11 +241,13 @@ body {
         }
     
         .inside {
-            background-color: yellow;
+            background: repeating-linear-gradient(
+                45deg, #C91215, #C91215 10px, #2BA84A 10px, #2BA84A 20px
+            );
             top: 0px;
             left: 0px;
-            width: 200px;
-            height: 200px;
+            width: 170px;
+            height: 170px;
             cursor: pointer;
         }
     }
@@ -125,14 +255,14 @@ body {
 
 .open {
     transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
-    border-right: 2px dotted white;
+    border-right: 4px dotted $sec-color;
 }
 
 .popup {
     display: none;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -141,7 +271,10 @@ body {
     .popup-content {
         width: 40%;
         padding: 40px;
-        background-color: white;
+        font-family: sans-serif;
+        text-align: center;
+        background-color: $sec-color;
+        box-shadow: 4px 4px 13px -5px rgb(0, 0, 0);
         animation: scaleUpModal 400ms ease-out forwards;
 
         @keyframes scaleUpModal {
@@ -176,6 +309,14 @@ body {
                 object-fit: cover;
             }
         }
+
+        .popup-header {
+            font-family: $monts-bold;
+        }
+
+        .popup-desc {
+            font-family: $robo-regular;
+        }
     }
 }
 
@@ -187,8 +328,9 @@ body {
 
 .btn {
     padding: 10px;
-    background-color: #C11A22;
-    color: white;
+    width: 100%;
+    background-color: $prim-color;
+    color: $sec-color;
     border: none;
     font-size: 16px;
     font-family: sans-serif;
@@ -202,61 +344,124 @@ body {
 
     a {
         text-decoration: none;
-        color: white;
+        color: $sec-color;
     }
 }
 
-// ADMIN //@
-
-.form-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-
-    .hihi {
-        padding-top: 50px;
-        padding-bottom: 50px;
-        width: 400px;
+@media only screen and (max-width: 768px) {
+    .container {
         height: 100%;
-        background-color: white;
-        margin-bottom: 30px;
-    }
-
-    .sign-up {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .form-content {
-            width: 80%;
-
-            .inputs {
-                width: 100%;
-                height: 25px;
-                margin-bottom: 25px;
+        nav {
+            margin: 0px;
+            padding: 0;
+    
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+    
+                li {
+                    margin: 20px 10px 0 0;
+                    list-style: none;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+    
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        margin: 20px;
+                    }
+                }
             }
         }
-
-        .btn {
-            padding: 10px;
-            background-color: #C11A22;
-            color: white;
-            border: none;
-            font-size: 16px;
+        .intro {
             font-family: sans-serif;
             font-weight: bold;
+            text-align: center;
             letter-spacing: 2px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: rgb(172, 16, 23);
+            margin-top: 20px;
+    
+            .header {
+                margin: 50px 0px 10px;
+                padding: 0;
+                color: white;
+                font-size: 30px;
+            }
+    
+            .description {
+                color: white;
+                width: 90%;
+                margin: 0 auto;
             }
         }
+        .wrap-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 30px auto 0;
+            width: 100%;
+    
+            .wrap {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                margin-top: 50px;
+                border: 4px dotted $sec-color;
+                transform: perspective(1px) translateZ(0);
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+                transition-duration: 0.3s;
+                transition-property: transform;
+                transition-timing-function: ease-out;
+            }
+        
+            .door {
+                background: repeating-linear-gradient(
+                    45deg, #C91215, #C91215 10px, #2BA84A 10px, #2BA84A 20px
+                );
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 150px;
+                height: 150px;
+                cursor: pointer;
+                z-index: 999;
+                transform-origin: left;
+                transition: all 0.5s ease-in-out;
+            }
+    
+            
+        
+            .number-text {
+                margin: 0;
+                padding: 0;
+                color: $sec-color;
+                font-size: 40px;
+                font-family: sans-serif;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        
+            .inside {
+                background: repeating-linear-gradient(
+                    45deg, #C91215, #C91215 10px, #2BA84A 10px, #2BA84A 20px
+                );
+                top: 0px;
+                left: 0px;
+                width: 150px;
+                height: 150px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .popup {
+        .popup-content {
+            width: 80%;
+        }
+
     }
 }

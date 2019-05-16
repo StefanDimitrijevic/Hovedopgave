@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
     // Checking for errors and handling them
        if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
-            if ($fileSize < 200000) {
+            if ($fileSize < 2000000) {
                 // Declaring a unique filename for each uploaded image
                 $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
                 // Declaring where the file will get stored
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
                         // Uploading image to server
                         move_uploaded_file($fileTempName, $fileDestination);
                         
-                        header("Location: fileupload.php?upload=success");
+                        header("Location: index.php?upload=success");
                     }
                 }
             } else {

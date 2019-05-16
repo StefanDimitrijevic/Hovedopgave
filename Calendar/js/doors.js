@@ -21,6 +21,8 @@ door.forEach( (doors) => {
 
     firstInside.addEventListener('click', () => {
         firstPopup.classList.toggle('modal');
+        document.body.style.overflowY = "hidden";
+        document.body.style.overflowX = "hidden";
     });
 
     secondInside.addEventListener('click', () => {
@@ -39,6 +41,8 @@ door.forEach( (doors) => {
 exit.forEach( (exits) => {
     exits.addEventListener('click', function() {
         firstPopup.classList.remove('modal');
+        document.body.style.overflowY = "initial";
+        document.body.style.overflowX = "initial";
         secondPopup.classList.remove('modal');
         thirdPopup.classList.remove('modal');
         fourthPopup.classList.remove('modal');

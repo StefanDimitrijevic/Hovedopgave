@@ -14,9 +14,61 @@
 <body>
     <div class="container">
 
-        <?php
+        <!-- <?php
             include_once('nav.php');
-        ?>
+        ?> -->
+
+        <p class="upload">Upload</p>
+
+        <div class="offset">
+            <p class="close">X</p>
+
+            <?php
+            if (isset($_SESSION['users_id'])) { ?>
+                <form class="form" action="upload.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-content">
+                        <label class="labels" for="">Filnavn</label>
+                        <input class="inputs" type="text" name="filename" placeholder="Fil navn..." required>
+                    </div>
+                    <div class="form-content">
+                        <label class="labels" for="">Billed titel</label>
+                        <input class="inputs" type="text" name="filetitle" placeholder="Billede titel..." required>
+                    </div>
+                    <div class="form-content">
+                        <label class="labels" for="">Billed beskrivelse</label>
+                        <textarea name="filedesc" placeholder="Billede beskrivelse..." required></textarea>
+                    </div>
+                    <div class="form-content">
+                        <label class="labels" for="">Link til hjemmeside</label>
+                        <input class="inputs" type="text" name="filelink" placeholder="www.minside.dk" required>
+                    </div>
+                    <div class="form-content">
+                        <label class="labels" for="">Upload billede (jpg, png, jpeg)</label>
+                        <input class="inputs-file" type="file" name="file" required>
+                    </div>
+                    <div class="form-content">
+                        <label class="labels" for="">Vælg hvilken låge billedet skal uploades til</label>
+                        <select name="doorid" required>
+                            <?php
+                                require_once('dbcon.php');
+                                $sql = "SELECT idCalendarDoors, doorNumber FROM calendarDoors";
+                                $stmt = $link->prepare($sql);
+                                $stmt->execute();
+                                $stmt->bind_result($doorId, $doorNum);
+            
+                                while($stmt->fetch()){
+                                    echo '<option value="'.$doorId.'">'.$doorNum.'</option>'.PHP_EOL;
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-content">
+                        <button class="btn" type="submit" name="submit">UPLOAD</button>
+                    </div>
+                </form>
+            <?php } else {} ?>
+
+        </div>
 
         <div class="intro">
             <h1 class="header">2019 adventskalender</h1>
@@ -70,8 +122,8 @@
                 <div class="image-holder">
                     <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                 </div>
-                <h1><?=$title?></h1>
-                <h3><?=$desc?></h3>
+                <h1 class="popup-header"><?=$title?></h1>
+                <p class="popup-desc"><?=$desc?></p>
                 <button class="btn">
                     <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
                 </button>
@@ -95,8 +147,8 @@
                 <div class="image-holder">
                     <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                 </div>
-                <h1><?=$title?></h1>
-                <h3><?=$desc?></h3>
+                <h1 class="popup-header"><?=$title?></h1>
+                <p class="popup-desc"><?=$desc?></p>
                <button class="btn">
                     <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
                </button>
@@ -120,10 +172,10 @@
                 <div class="image-holder">
                     <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                 </div>
-                <h1><?=$title?></h1>
-                <h3><?=$desc?></h3>
+                <h1 class="popup-header"><?=$title?></h1>
+                <p class="popup-desc"><?=$desc?></p>
                <button class="btn">
-                    <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
+                    <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
                </button>
             </div>
         </div> 
@@ -145,10 +197,10 @@
                 <div class="image-holder">
                     <img class="popup-image" src="uploads/<?=$fullName?>" alt="">
                 </div>
-                <h1><?=$title?></h1>
-                <h3><?=$desc?></h3>
+                <h1 class="popup-header"><?=$title?></h1>
+                <p class="popup-desc"><?=$desc?></p>
                <button class="btn">
-                    <a href="http://<?=$siteLink?>" target="_blank">Tryk for at gå til produktet</a>
+                    <a href="http://<?=$siteLink?>" target="_blank">Se side</a>
                </button>
             </div>
         </div> 
@@ -157,6 +209,7 @@
     </div>
 
     <script src="js/doors.js"></script>
+    <script src="js/navigation.js"></script>
     <script src="js/customSnow.js"></script>
 
 </body>

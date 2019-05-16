@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-    background-image: url("/Calendar/images/christmas-background.jpg");
+    background-image: url("/Hovedopgave/Calendar/images/christmas-background.png");
     background-repeat: no-repeat no-repeat;
     background-position: center center;
     background-size: cover;
@@ -41,12 +41,9 @@ body {
     }
 
     .form {
-        padding-top: 50px;
-        padding-bottom: 50px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: 50px auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
         width: 40%;
         background-color: white;
         display: flex;
@@ -68,7 +65,7 @@ body {
                 margin-bottom: 25px;
                 margin-top: 10px;
                 padding: 0px 10px;
-                border: 1px solid #C11A22;
+                border: 1px solid #C91215;
                 box-sizing: border-box;
                 border-radius: 5px;
             }
@@ -82,11 +79,11 @@ body {
 
             textarea {
                 width: 100%;
-                height: 50px;
+                height: 100px;
                 margin-bottom: 25px;
                 margin-top: 10px;
                 padding: 10px 10px 0px;
-                border: 1px solid #C11A22;
+                border: 1px solid #C91215;
                 resize: none;
                 box-sizing: border-box;
                 border-radius: 5px;
@@ -98,13 +95,13 @@ body {
                 margin-bottom: 25px;
                 margin-top: 10px;
                 padding: 0px 10px;
-                border: 1px solid #C11A22;
+                border: 1px solid #C91215;
             }
         }
 
         .btn {
             padding: 10px;
-            background-color: #C11A22;
+            background-color: #C91215;
             color: white;
             border: none;
             font-size: 16px;
@@ -118,5 +115,107 @@ body {
             }
         }
 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        height: 100%;
+
+        nav {
+            margin: 0px;
+            padding: 0;
+    
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+    
+                li {
+                    margin: 20px 10px 0 0;
+                    list-style: none;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+    
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        margin: 20px;
+                    }
+                }
+            }
+        }
+
+        .form {
+            width: 90%;
+            height: 90%;
+            overflow-y: scroll;
+    
+            .form-content {
+                width: 80%;
+    
+                .labels {
+                    font-family: sans-serif;
+                }
+    
+                .inputs {
+                    width: 100%;
+                    height: 35px;
+                    margin-bottom: 25px;
+                    margin-top: 10px;
+                    padding: 0px 10px;
+                    border: 1px solid #C91215;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                }
+    
+                .inputs-file {
+                    width: 100%;
+                    height: 35px;
+                    margin-bottom: 25px;
+                    margin-top: 10px;
+                }
+    
+                textarea {
+                    width: 100%;
+                    height: 100px;
+                    margin-bottom: 25px;
+                    margin-top: 10px;
+                    padding: 10px 10px 0px;
+                    border: 1px solid #C91215;
+                    resize: none;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                }
+    
+                select {
+                    width: 100%;
+                    height: 35px;
+                    margin-bottom: 25px;
+                    margin-top: 10px;
+                    padding: 0px 10px;
+                    border: 1px solid #C91215;
+                }
+            }
+    
+            .btn {
+                padding: 10px;
+                background-color: #C91215;
+                color: white;
+                border: none;
+                font-size: 16px;
+                font-family: sans-serif;
+                font-weight: bold;
+                letter-spacing: 2px;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: rgb(172, 16, 23);
+                }
+            }
+    
+        }
     }
 }
