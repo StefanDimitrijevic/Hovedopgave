@@ -16,22 +16,50 @@ body {
   height: 100vh;
 }
 
-.container .upload {
+.container .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #FFFFFF;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .nav .upload {
+  margin: 20px 20px;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.container .nav .upload:hover {
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.container .nav .log-out {
   margin: 20px 20px;
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #FFFFFF;
+  text-decoration: none;
   cursor: pointer;
 }
 
+.container .nav .log-out:hover {
+  border-bottom: 1px solid #FFFFFF;
+}
+
 .container .offset {
-  width: 0%;
+  width: 100%;
   height: 100%;
   position: fixed;
+  display: none;
   top: 0;
-  right: 0;
-  background-color: #FFFFFF;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -44,21 +72,25 @@ body {
 .container .offset .close {
   padding: 0;
   margin: 0;
-  color: #C91215;
+  color: #FFFFFF;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   position: absolute;
-  top: 1%;
-  right: 2%;
+  top: 2%;
+  left: 1%;
   cursor: pointer;
 }
 
-.container .offset .form {
-  margin: 35px auto;
+.container .offset .hmm {
+  width: 100%;
+}
+
+.container .offset .hmm .form {
+  margin: 0px auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 90%;
-  background-color: #C91215;
+  width: 40%;
+  background-color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,113 +106,111 @@ body {
           justify-content: center;
   -webkit-box-shadow: 4px 4px 13px -5px black;
           box-shadow: 4px 4px 13px -5px black;
+  -webkit-animation: scaleUpModal 400ms ease-out forwards;
+          animation: scaleUpModal 400ms ease-out forwards;
 }
 
-.container .offset .form .form-content {
+@-webkit-keyframes scaleUpModal {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleUpModal {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.container .offset .hmm .form .form-content {
   width: 80%;
 }
 
-.container .offset .form .form-content .labels {
+.container .offset .hmm .form .form-content .labels {
   font-family: "Roboto", sans-serif;
-  color: #FFFFFF;
+  font-size: 16px;
+  color: #000000;
 }
 
-.container .offset .form .form-content .inputs {
+.container .offset .hmm .form .form-content .inputs {
   width: 100%;
   height: 30px;
   margin-bottom: 25px;
   margin-top: 10px;
   padding: 0px 10px;
-  border: 1px solid #C91215;
+  border: 1px solid #000000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 5px;
 }
 
-.container .offset .form .form-content .inputs-file {
+.container .offset .hmm .form .form-content .inputs-file {
   width: 100%;
   height: 35px;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: #FFFFFF;
+  color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-.container .offset .form .form-content textarea {
+.container .offset .hmm .form .form-content textarea {
   width: 100%;
   height: 100px;
   margin-bottom: 25px;
   margin-top: 10px;
   padding: 10px 10px 0px;
-  border: 1px solid #C91215;
+  border: 1px solid #000000;
   resize: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 5px;
 }
 
-.container .offset .form .form-content select {
+.container .offset .hmm .form .form-content select {
   width: 100%;
   height: 35px;
   margin-bottom: 25px;
   margin-top: 10px;
   padding: 0px 10px;
-  border: 1px solid #C91215;
+  border-radius: 0px;
+  border: 1px solid #000000;
 }
 
-.container .offset .form .btn {
+.container .offset .hmm .form .btn {
   padding: 10px;
   width: 100%;
   background-color: #2BA84A;
   color: #FFFFFF;
-  border: none;
+  border: 1px solid #FFFFFF;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
   cursor: pointer;
 }
 
-.container .offset .form .btn:hover {
+.container .offset .hmm .form .btn:hover {
   background-color: #2e8b45;
 }
 
 .container .offset-visible {
-  width: 40%;
-}
-
-.container nav {
-  margin-bottom: 20px;
-  padding: 0;
-}
-
-.container nav ul {
-  margin: 0;
-  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.container nav ul li {
-  margin: 20px 20px 0 0;
-  list-style: none;
-  font-family: sans-serif;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.container nav ul li a {
-  text-decoration: none;
-  color: #FFFFFF;
-  margin: 20px;
-}
-
-.container nav ul li a:hover {
-  border-bottom: 2px solid #FFFFFF;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container .intro {
@@ -279,7 +309,22 @@ body {
   cursor: pointer;
 }
 
-.open {
+.container .wrap-flex .inside .inside-text {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.container .open {
   -webkit-transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
           transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
   border-right: 4px dotted #FFFFFF;
@@ -306,17 +351,6 @@ body {
           box-shadow: 4px 4px 13px -5px black;
   -webkit-animation: scaleUpModal 400ms ease-out forwards;
           animation: scaleUpModal 400ms ease-out forwards;
-}
-
-@-webkit-keyframes scaleUpModal {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
 }
 
 @keyframes scaleUpModal {
@@ -382,18 +416,18 @@ body {
 .btn {
   padding: 10px;
   width: 100%;
-  background-color: #C91215;
+  background-color: #2BA84A;
   color: #FFFFFF;
   border: none;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #ac1017;
+  background-color: #2e8b45;
 }
 
 .btn a {
@@ -401,52 +435,168 @@ body {
   color: #FFFFFF;
 }
 
-@media only screen and (max-width: 768px) {
-  .container {
-    height: 100%;
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    background-image: url("/Hovedopgave/Calendar/images/christmas-backgroundT.png");
   }
-  .container nav {
-    margin: 0px;
-    padding: 0;
-  }
-  .container nav ul {
-    margin: 0;
-    padding: 0;
+  .container .nav {
+    width: 61%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    color: #FFFFFF;
+    margin: 0 auto;
+  }
+  .container .offset .close {
+    left: 3%;
+  }
+  .container .offset .hmm .form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+  }
+  .container .offset .hmm .form .form-content {
+    width: 80%;
+  }
+  .container .offset-visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .container nav ul li {
-    margin: 20px 10px 0 0;
-    list-style: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    letter-spacing: 2px;
+  .container .intro {
+    margin-top: 40px;
   }
-  .container nav ul li a {
+  .container .wrap-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 50px auto;
+    width: 61%;
+  }
+  .container .wrap-flex .wrap {
+    width: 200px;
+    height: 200px;
+  }
+  .container .wrap-flex .door {
+    width: 200px;
+    height: 200px;
+  }
+  .container .wrap-flex .number-text {
+    color: #FFFFFF;
+    font-size: 70px;
+  }
+  .container .wrap-flex .inside {
+    width: 200px;
+    height: 200px;
+  }
+  .container .wrap-flex .inside .inside-text {
+    font-size: 25px;
+    width: 90%;
+  }
+  .popup .popup-content {
+    width: 80%;
+  }
+  .popup .popup-content .image-holder .popup-image {
+    width: 100%;
+  }
+  .modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    background-image: url("/Hovedopgave/Calendar/images/christmas-backgroundM.png");
+  }
+  .container {
+    height: 100vh;
+  }
+  .container .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #FFFFFF;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .container .nav .upload {
+    margin: 20px 20px;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .container .nav .upload:hover {
+    border-bottom: 1px solid #FFFFFF;
+  }
+  .container .nav .log-out {
+    margin: 20px 20px;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
     text-decoration: none;
-    color: white;
-    margin: 20px;
+    cursor: pointer;
+  }
+  .container .nav .log-out:hover {
+    border-bottom: 1px solid #FFFFFF;
+  }
+  .container .offset .close {
+    top: 1%;
+    left: 1%;
+    cursor: pointer;
+  }
+  .container .offset .hmm {
+    height: 50%;
+    overflow-y: scroll;
+  }
+  .container .offset .hmm .form {
+    width: 90%;
+  }
+  .container .offset .hmm .form .form-content {
+    width: 80%;
+  }
+  .container .offset-visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .container .intro {
-    font-family: sans-serif;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: 2px;
-    margin-top: 20px;
+    margin-bottom: 30px;
   }
   .container .intro .header {
-    margin: 50px 0px 10px;
-    padding: 0;
-    color: white;
-    font-size: 30px;
+    margin: 0px 0px 10px;
+    font-size: 24px;
   }
   .container .intro .description {
-    color: white;
-    width: 90%;
+    font-size: 16px;
+    width: 85%;
     margin: 0 auto;
   }
   .container .wrap-flex {
@@ -457,64 +607,53 @@ body {
         flex-wrap: wrap;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    margin: 30px auto 0;
+    margin: 0 auto;
     width: 100%;
   }
   .container .wrap-flex .wrap {
     position: relative;
     width: 150px;
     height: 150px;
-    margin-top: 50px;
+    margin-top: 8%;
     border: 4px dotted #FFFFFF;
-    -webkit-transform: perspective(1px) translateZ(0);
-            transform: perspective(1px) translateZ(0);
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-            transition-duration: 0.3s;
-    -webkit-transition-property: -webkit-transform;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-property: transform, -webkit-transform;
-    -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
   }
   .container .wrap-flex .door {
-    background: repeating-linear-gradient(45deg, #C91215, #C91215 10px, #2BA84A 10px, #2BA84A 20px);
-    position: absolute;
-    top: 0px;
-    left: 0px;
     width: 150px;
     height: 150px;
-    cursor: pointer;
-    z-index: 999;
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
   }
   .container .wrap-flex .number-text {
-    margin: 0;
-    padding: 0;
-    color: #FFFFFF;
-    font-size: 40px;
-    font-family: sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    font-size: 50px;
   }
   .container .wrap-flex .inside {
-    background: repeating-linear-gradient(45deg, #C91215, #C91215 10px, #2BA84A 10px, #2BA84A 20px);
-    top: 0px;
-    left: 0px;
     width: 150px;
     height: 150px;
-    cursor: pointer;
+  }
+  .container .wrap-flex .inside .inside-text {
+    width: 90%;
   }
   .popup .popup-content {
-    width: 80%;
+    width: 70%;
+    padding: 30px;
+  }
+  .popup .popup-content .exit {
+    top: 0%;
+    right: 1.5%;
+  }
+  .popup .popup-content .image-holder {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .popup .popup-content .image-holder .popup-image {
+    max-width: 100%;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 /*# sourceMappingURL=style.css.map */

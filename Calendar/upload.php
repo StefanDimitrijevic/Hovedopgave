@@ -23,7 +23,6 @@ if (isset($_POST['submit'])) {
     $file = $_FILES['file'];
 
     // print_r $file to see what we get on form submission
-    // print_r($_SESSION['users_id']);
 
     // Declaring form submission response for later error handling
     $fileName = $file["name"];
@@ -43,7 +42,7 @@ if (isset($_POST['submit'])) {
     // Checking for errors and handling them
        if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
-            if ($fileSize < 2000000) {
+            if ($fileSize < 2000) {
                 // Declaring a unique filename for each uploaded image
                 $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
                 // Declaring where the file will get stored
@@ -54,7 +53,7 @@ if (isset($_POST['submit'])) {
 
                 // Checking if input fields are empty
                 if (empty($imageTitle) || empty($imageDesc)) {
-                    header("Location: fileupload.php?upload=empty");
+                    header("Location: index.php?upload=empty");
                     exit();
                 } else {
                     // Inserting data from the image into the database
@@ -67,7 +66,7 @@ if (isset($_POST['submit'])) {
 
                         // Uploading image to server
                         move_uploaded_file($fileTempName, $fileDestination);
-                        
+
                         header("Location: index.php?upload=success");
                     }
                 }
@@ -76,7 +75,7 @@ if (isset($_POST['submit'])) {
                 exit();
             }
         } else {
-            echo "Der opstod en fejl!";
+            echo "Der opstod en fejl, prøv venligst igen!";
             exit();          
         }
     } else {

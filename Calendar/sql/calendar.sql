@@ -2,10 +2,6 @@ DROP TABLE IF EXISTS content;
 DROP TABLE IF EXISTS calendarUsers;
 DROP TABLE IF EXISTS calendarDoors;
 
-
-CREATE SCHEMA IF NOT EXISTS `mul18` DEFAULT CHARACTER SET utf8 ;
-USE `mul18` ;
-
 CREATE TABLE IF NOT EXISTS `mul18`.`calendarUsers` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
@@ -23,6 +19,7 @@ CREATE TABLE IF NOT EXISTS `mul18`.`content` (
   `idContent` INT NOT NULL AUTO_INCREMENT,
   `titleContent` LONGTEXT NOT NULL,
   `descContent` LONGTEXT NOT NULL,
+  `linkContent` LONGTEXT NOT NULL,
   `imgNameContent` LONGTEXT NOT NULL,
   `calendarUsers_id` INT NOT NULL,
   `calendarDoors_idCalendarDoors` INT NOT NULL,
@@ -42,3 +39,12 @@ CREATE TABLE IF NOT EXISTS `mul18`.`content` (
 ENGINE = InnoDB;
 
 SELECT * FROM calendarUsers;
+
+INSERT INTO calendarDoors (doorNumber) VALUES ("Låge 1");
+INSERT INTO calendarDoors (doorNumber) VALUES ("Låge 2");
+INSERT INTO calendarDoors (doorNumber) VALUES ("Låge 3");
+INSERT INTO calendarDoors (doorNumber) VALUES ("Låge 4");
+
+SELECT * FROM calendarUsers;
+SELECT * FROM calendarDoors;
+SELECT * FROM content;

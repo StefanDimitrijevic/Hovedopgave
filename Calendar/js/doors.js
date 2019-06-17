@@ -1,28 +1,28 @@
 // GLOBAL VARIABLES
-var door = document.querySelectorAll('.door');
+let door = document.querySelectorAll('.door');
+let firstInside = document.getElementById('inside-one');
+let firstPopup = document.getElementById('first-popup');
+let secondInside = document.getElementById('inside-two');
+let secondPopup = document.getElementById('second-popup');
+let thirdInside = document.getElementById('inside-three');
+let thirdPopup = document.getElementById('third-popup');
+let fourthInside = document.getElementById('inside-four');
+let fourthPopup = document.getElementById('fourth-popup');
+let exit = document.querySelectorAll('.exit');
 
-var firstInside = document.getElementById('inside-one');
-var firstPopup = document.getElementById('first-popup');
-var secondInside = document.getElementById('inside-two');
-var secondPopup = document.getElementById('second-popup');
-var thirdInside = document.getElementById('inside-three');
-var thirdPopup = document.getElementById('third-popup');
-var fourthInside = document.getElementById('inside-four');
-var fourthPopup = document.getElementById('fourth-popup');
-
-var exit = document.querySelectorAll('.exit');
-
-// Looping through all doors and adding an EventListener to them
-door.forEach( (doors) => {
-    doors.addEventListener('click', function(){
-        doors.classList.toggle('open');
+// Function that loops through all doors and opens the clicked one
+doorOpener = () => {
+    door.forEach( (doors) => {
+        doors.addEventListener('click', function(){
+            doors.classList.toggle('open');
+        });
     });
-});
+}
 
+// Function for toggling modal class
+modalToggle = () => {
     firstInside.addEventListener('click', () => {
         firstPopup.classList.toggle('modal');
-        document.body.style.overflowY = "hidden";
-        document.body.style.overflowX = "hidden";
     });
 
     secondInside.addEventListener('click', () => {
@@ -36,18 +36,32 @@ door.forEach( (doors) => {
     fourthInside.addEventListener('click', () => {
         fourthPopup.classList.toggle('modal');
     });
+}
 
-// Looping through all exits and adding an EventListener to them
-exit.forEach( (exits) => {
-    exits.addEventListener('click', function() {
-        firstPopup.classList.remove('modal');
-        document.body.style.overflowY = "initial";
-        document.body.style.overflowX = "initial";
-        secondPopup.classList.remove('modal');
-        thirdPopup.classList.remove('modal');
-        fourthPopup.classList.remove('modal');
-        door.forEach( (doors) => {
-            doors.classList.remove('open');
+// Close function for looping through all exits and adding an EventListener to them
+close = () => {
+    exit.forEach( (exits) => {
+        exits.addEventListener('click', function() {
+            firstPopup.classList.remove('modal');
+            secondPopup.classList.remove('modal');
+            thirdPopup.classList.remove('modal');
+            fourthPopup.classList.remove('modal');
+            door.forEach( (doors) => {
+                doors.classList.remove('open');
+            });
         });
     });
-});
+}
+
+// Constructor function that holds every other function
+constructor = () => {
+    // 1. Open the doors
+    doorOpener();
+    // 2. Open the modals
+    modalToggle();
+    // 3. Close the open modal and the open doors
+    close();
+}
+
+// Calling the constructor function
+constructor();

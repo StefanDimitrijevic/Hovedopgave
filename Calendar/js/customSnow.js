@@ -1,3 +1,6 @@
+// Konfigurationsfil til sne effekten på siden.
+// Dette script er fundet på http://www.schillmania.com/projects/snowstorm/
+
 snowStorm.snowColor = '#fff';
 snowStorm.animationInterval = 50;
 snowStorm.usePositionFixed = true;

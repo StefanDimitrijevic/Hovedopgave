@@ -16,22 +16,46 @@ body {
 .container {
     height: 100vh;
 
-    .upload {
-        margin: 20px 20px;
-        padding: 0;
-        font-family: $robo-regular;
-        font-weight: 400;
+    .nav {
+        display: flex;
         color: $sec-color;
-        cursor: pointer;
+        justify-content: flex-end;
+
+        .upload {
+            margin: 20px 20px;
+            padding: 0;
+            font-family: $robo-regular;
+            font-weight: 400;
+            cursor: pointer;
+
+            &:hover {
+                border-bottom: 1px solid $sec-color;
+            }
+        }
+
+        .log-out {
+            margin: 20px 20px;
+            padding: 0;
+            font-family: $robo-regular;
+            font-weight: 400;
+            color: $sec-color;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                border-bottom: 1px solid $sec-color;
+            }
+        }
     }
 
     .offset {
-        width: 0%;
+        width: 100%;
         height: 100%;
         position: fixed;
+        display: none;
         top: 0;
-        right: 0;
-        background-color: $sec-color;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: 9999;
         overflow-x: hidden;
         overflow-y: hidden;
@@ -41,130 +65,116 @@ body {
         .close {
             padding: 0;
             margin: 0;
-            color: $prim-color;
+            color: $sec-color;
             font-family: $monts-bold;
             font-weight: 700;
             position: absolute;
-            top: 1%;
-            right: 2%;
+            top: 2%;
+            left: 1%;
             cursor: pointer;
         }
-
-        .form {
-            margin: 35px auto;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            width: 90%;
-            background-color: $prim-color;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 4px 4px 13px -5px rgb(0, 0, 0);
+        .hmm {
+            width: 100%;
+            .form {
+                margin: 0px auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                width: 40%;
+                background-color: $sec-color;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 4px 4px 13px -5px rgb(0, 0, 0);
+                animation: scaleUpModal 400ms ease-out forwards;
     
-            .form-content {
-                width: 80%;
+                @keyframes scaleUpModal {
+                    0% {
+                        transform: scale(0);
+                    }
     
-                .labels {
-                    font-family: $robo-regular;
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+    
+                .form-content {
+                    width: 80%;
+    
+                    .labels {
+                        font-family: $robo-regular;
+                        font-size: 16px;
+                        color: $black;
+                    }
+    
+                    .inputs {
+                        width: 100%;
+                        height: 30px;
+                        margin-bottom: 25px;
+                        margin-top: 10px;
+                        padding: 0px 10px;
+                        border: 1px solid $black;
+                        box-sizing: border-box;
+                    }
+    
+                    .inputs-file {
+                        width: 100%;
+                        height: 35px;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        color: $black;
+                        font-family: $robo-regular;
+                    }
+    
+                    textarea {
+                        width: 100%;
+                        height: 100px;
+                        margin-bottom: 25px;
+                        margin-top: 10px;
+                        padding: 10px 10px 0px;
+                        border: 1px solid $black;
+                        resize: none;
+                        box-sizing: border-box;
+                    }
+    
+                    select {
+                        width: 100%;
+                        height: 35px;
+                        margin-bottom: 25px;
+                        margin-top: 10px;
+                        padding: 0px 10px;
+                        border-radius: 0px;
+                        border: 1px solid $black;
+                    }
+                }
+    
+                .btn {
+                    padding: 10px;
+                    width: 100%;
+                    background-color: $third-color;
                     color: $sec-color;
+                    border: 1px solid $sec-color;
+                    font-size: 16px;
+                    font-family: $monts-bold;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background-color: rgb(46, 139, 69);
+                    }
                 }
     
-                .inputs {
-                    width: 100%;
-                    height: 30px;
-                    margin-bottom: 25px;
-                    margin-top: 10px;
-                    padding: 0px 10px;
-                    border: 1px solid $prim-color;
-                    box-sizing: border-box;
-                    border-radius: 5px;
-                }
-    
-                .inputs-file {
-                    width: 100%;
-                    height: 35px;
-                    margin-top: 10px;
-                    margin-bottom: 10px;
-                    color: $sec-color;
-                    font-family: $robo-regular;
-                }
-    
-                textarea {
-                    width: 100%;
-                    height: 100px;
-                    margin-bottom: 25px;
-                    margin-top: 10px;
-                    padding: 10px 10px 0px;
-                    border: 1px solid $prim-color;
-                    resize: none;
-                    box-sizing: border-box;
-                    border-radius: 5px;
-                }
-    
-                select {
-                    width: 100%;
-                    height: 35px;
-                    margin-bottom: 25px;
-                    margin-top: 10px;
-                    padding: 0px 10px;
-                    border: 1px solid $prim-color;
-                }
             }
-    
-            .btn {
-                padding: 10px;
-                width: 100%;
-                background-color: $third-color;
-                color: $sec-color;
-                border: none;
-                font-size: 16px;
-                font-family: sans-serif;
-                font-weight: bold;
-                letter-spacing: 2px;
-                cursor: pointer;
-    
-                &:hover {
-                    background-color: rgb(46, 139, 69);
-                }
-            }
-    
         }
     }
 
     .offset-visible {
-        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    nav {
-        margin-bottom: 20px;
-        padding: 0;
-
-        ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-
-            li {
-                margin: 20px 20px 0 0;
-                list-style: none;
-                font-family: sans-serif;
-                font-weight: bold;
-                letter-spacing: 2px;
-
-                a {
-                    text-decoration: none;
-                    color: $sec-color;
-                    margin: 20px;
-
-                    &:hover {
-                        border-bottom: 2px solid $sec-color;
-                    }
-                }
-            }
-        }
-    }
     .intro {
         text-align: center;
         letter-spacing: 2px;
@@ -204,17 +214,15 @@ body {
             transition-property: transform;
             transition-timing-function: ease-out;
         }
-    
+
         .wrap:hover,
         .wrap:focus,
         .wrap:active {
             transform: translateY(-8px);
         }
-    
+
         .door {
-            background: repeating-linear-gradient(
-                45deg, $prim-color, $prim-color 10px, $third-color 10px, $third-color 20px
-            );
+            background: repeating-linear-gradient(45deg, $prim-color, $prim-color 10px, $third-color 10px, $third-color 20px);
             position: absolute;
             top: 0px;
             left: 0px;
@@ -226,8 +234,6 @@ body {
             transition: all 0.5s ease-in-out;
         }
 
-        
-    
         .number-text {
             margin: 0;
             padding: 0;
@@ -239,24 +245,37 @@ body {
             left: 50%;
             transform: translate(-50%, -50%);
         }
-    
+
         .inside {
-            background: repeating-linear-gradient(
-                45deg, #C91215, #C91215 10px, #2BA84A 10px, #2BA84A 20px
-            );
+            background: repeating-linear-gradient(45deg, $prim-color, $prim-color 10px, $third-color 10px, $third-color 20px);
             top: 0px;
             left: 0px;
             width: 170px;
             height: 170px;
             cursor: pointer;
+
+            .inside-text {
+                margin: 0;
+                padding: 0;
+                font-family: $monts-bold;
+                font-size: 20px;
+                text-align: center;
+                color: $sec-color;
+                width: 80%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
         }
+    }
+
+    .open {
+        transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
+        border-right: 4px dotted $sec-color;
     }
 }
 
-.open {
-    transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
-    border-right: 4px dotted $sec-color;
-}
 
 .popup {
     display: none;
@@ -303,6 +322,7 @@ body {
             background-color: rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: center;
+
             .popup-image {
                 max-width: 100%;
                 height: 300px;
@@ -329,17 +349,17 @@ body {
 .btn {
     padding: 10px;
     width: 100%;
-    background-color: $prim-color;
+    background-color: $third-color;
     color: $sec-color;
     border: none;
     font-size: 16px;
-    font-family: sans-serif;
+    font-family: $monts-bold;
     font-weight: bold;
     letter-spacing: 2px;
     cursor: pointer;
 
     &:hover {
-        background-color: rgb(172, 16, 23);
+        background-color: rgb(46, 139, 69);
     }
 
     a {
@@ -348,120 +368,238 @@ body {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        background-image: url("/Hovedopgave/Calendar/images/christmas-backgroundT.png");
+    }
+
     .container {
-        height: 100%;
-        nav {
-            margin: 0px;
-            padding: 0;
+
+        .nav {
+            width: 61%;
+            display: flex;
+            color: $sec-color;
+            margin: 0 auto;
+        }
+
+        .offset {
     
-            ul {
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-    
-                li {
-                    margin: 20px 10px 0 0;
-                    list-style: none;
-                    font-family: sans-serif;
-                    font-weight: bold;
-                    letter-spacing: 2px;
-    
-                    a {
-                        text-decoration: none;
-                        color: white;
-                        margin: 20px;
+            .close {
+                left: 3%;
+            }
+            .hmm {
+                .form {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    width: 80%;
+        
+                    .form-content {
+                        width: 80%;
                     }
                 }
             }
         }
-        .intro {
-            font-family: sans-serif;
-            font-weight: bold;
-            text-align: center;
-            letter-spacing: 2px;
-            margin-top: 20px;
     
-            .header {
-                margin: 50px 0px 10px;
+        .offset-visible {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro {
+            margin-top: 40px;
+        }
+
+        .wrap-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 50px auto;
+            width: 61%;
+    
+            .wrap {
+                width: 200px;
+                height: 200px;
+            }
+    
+            .door {
+                width: 200px;
+                height: 200px;
+            }
+    
+            .number-text {
+                color: $sec-color;
+                font-size: 70px;
+            }
+    
+            .inside {
+                width: 200px;
+                height: 200px;
+    
+                .inside-text {
+                    font-size: 25px;
+                    width: 90%;
+                }
+            }
+        }
+    }
+    .popup {
+        .popup-content {
+            width: 80%;
+
+            .image-holder {
+
+                .popup-image {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        background-image: url("/Hovedopgave/Calendar/images/christmas-backgroundM.png");
+    }
+
+    .container {
+        height: 100vh;
+    
+        .nav {
+            display: flex;
+            color: $sec-color;
+            justify-content: flex-end;
+    
+            .upload {
+                margin: 20px 20px;
                 padding: 0;
-                color: white;
-                font-size: 30px;
+                font-family: $robo-regular;
+                font-weight: 400;
+                cursor: pointer;
+    
+                &:hover {
+                    border-bottom: 1px solid $sec-color;
+                }
+            }
+    
+            .log-out {
+                margin: 20px 20px;
+                padding: 0;
+                font-family: $robo-regular;
+                font-weight: 400;
+                color: $sec-color;
+                text-decoration: none;
+                cursor: pointer;
+    
+                &:hover {
+                    border-bottom: 1px solid $sec-color;
+                }
+            }
+        }
+    
+        .offset {
+            .close {
+                top: 1%;
+                left: 1%;
+                cursor: pointer;
+            }
+            .hmm {
+                height: 50%;
+                overflow-y: scroll;
+                .form {
+                    width: 90%;
+        
+                    .form-content {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    
+        .offset-visible {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .intro {
+            margin-bottom: 30px;
+
+            .header {
+                margin: 0px 0px 10px;
+                font-size: 24px;
             }
     
             .description {
-                color: white;
-                width: 90%;
+                font-size: 16px;
+                width: 85%;
                 margin: 0 auto;
             }
         }
+    
         .wrap-flex {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            margin: 30px auto 0;
+            margin: 0 auto;
             width: 100%;
     
             .wrap {
                 position: relative;
                 width: 150px;
                 height: 150px;
-                margin-top: 50px;
+                margin-top: 8%;
                 border: 4px dotted $sec-color;
-                transform: perspective(1px) translateZ(0);
-                box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-                transition-duration: 0.3s;
-                transition-property: transform;
-                transition-timing-function: ease-out;
-            }
-        
-            .door {
-                background: repeating-linear-gradient(
-                    45deg, #C91215, #C91215 10px, #2BA84A 10px, #2BA84A 20px
-                );
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                width: 150px;
-                height: 150px;
-                cursor: pointer;
-                z-index: 999;
-                transform-origin: left;
-                transition: all 0.5s ease-in-out;
             }
     
-            
-        
-            .number-text {
-                margin: 0;
-                padding: 0;
-                color: $sec-color;
-                font-size: 40px;
-                font-family: sans-serif;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-        
-            .inside {
-                background: repeating-linear-gradient(
-                    45deg, #C91215, #C91215 10px, #2BA84A 10px, #2BA84A 20px
-                );
-                top: 0px;
-                left: 0px;
+            .door {
                 width: 150px;
                 height: 150px;
-                cursor: pointer;
+            }
+    
+            .number-text {
+                font-size: 50px;
+            }
+    
+            .inside {
+                width: 150px;
+                height: 150px;
+    
+                .inside-text {
+                    width: 90%;
+                }
             }
         }
     }
 
     .popup {
+    
         .popup-content {
-            width: 80%;
+            width: 70%;
+            padding: 30px;
+    
+            .exit {
+                top: 0%;
+                right: 1.5%;
+            }
+    
+            .image-holder {
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+    
+                .popup-image {
+                    max-width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                }
+            }
         }
-
     }
 }

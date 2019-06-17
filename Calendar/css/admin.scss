@@ -1,3 +1,5 @@
+@import "variables";
+
 html,
 body {
     margin: 0;
@@ -7,7 +9,7 @@ body {
 body {
     background-image: url("/Hovedopgave/Calendar/images/christmas-background.png");
     background-repeat: no-repeat no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
 }
 
@@ -24,13 +26,17 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
-    
+        
+        .create {
+            display: none;
+        }
+        
         .form-holder {
-            padding-top: 50px;
-            padding-bottom: 50px;
+            padding-top: 30px;
+            padding-bottom: 30px;
             width: 400px;
             height: 100%;
-            background-color: white;
+            background-color: $sec-color;
             margin-bottom: 30px;
             box-shadow: 4px 4px 13px -5px rgb(0, 0, 0);
         }
@@ -44,8 +50,14 @@ body {
             .form-content {
                 width: 80%;
 
+                i {
+                    position: absolute;
+                }
+
                 .labels {
-                    font-family: sans-serif;
+                    font-family: $robo-regular;
+                    font-size: 16px;
+                    color: $black;
                 }
     
                 .inputs {
@@ -54,27 +66,57 @@ body {
                     margin-bottom: 25px;
                     margin-top: 10px;
                     padding: 0px 10px;
-                    border: 1px solid #C91215;
+                    border: none;
                     box-sizing: border-box;
-                    border-radius: 5px;
+                    border: 1px solid $black;
                 }
             }
     
             .btn {
                 padding: 10px;
-                background-color: #C91215;
+                background-color: $third-color;
                 color: white;
                 border: none;
                 font-size: 16px;
-                font-family: sans-serif;
+                font-family: $monts-bold;
                 font-weight: bold;
                 letter-spacing: 2px;
                 cursor: pointer;
     
                 &:hover {
-                    background-color: rgb(172, 16, 23);
+                    background-color: rgb(46, 139, 69);
+                }
+            }
+
+            .opret {
+                font-family: $robo-regular;
+                font-size: 10px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+
+                .opret-click {
+                    text-decoration: underline;
+                    color: $third-color;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+
+                    &:hover {
+                        color: rgb(46, 139, 69);
+                    }
                 }
             }
         }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        background-image: url("/Hovedopgave/Calendar/images/christmas-backgroundT.png");
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        background-image: url("/Hovedopgave/Calendar/images/christmas-backgroundM.png");
     }
 }
